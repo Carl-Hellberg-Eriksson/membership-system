@@ -6,6 +6,10 @@ To work on the repository, always base your work on an issue (If you want to do 
 Create a branch called #<IssueId>-name-of-branch
 Prefix all your commits with "#IssueId - "
 
+## Get Started
+
+Don't know ¯\_(ツ)_/¯ glhf
+
 ## Architecture
 
 The backend is written in .Net Core 7(?) in what I think is called onion architecture :).
