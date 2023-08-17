@@ -1,5 +1,11 @@
 # MembershipSystem
 
+## Working with the repository
+
+To work on the repository, always base your work on an issue (If you want to do something that's not an issue yet, just set it up as one).
+Create a branch called #<IssueId>-name-of-branch
+Prefix all your commits with "#IssueId - "
+
 ## Architecture
 
 The backend is written in .Net Core 7(?) in what I think is called onion architecture :).
