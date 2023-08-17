@@ -11,8 +11,13 @@ Includes all domain entities (basic classes) and interfaces.
 
 ### MembershipSystem.Infrastructure
 
-Includes implementations of the interfaces defined in MembershipSystem.Core
+Includes implementations of the interfaces defined in MembershipSystem.Core.
+Handles the database integration.
 
 ### MembershipSystem.WebService
 
 The actual API. Should not be dependent on Infrastructure for anything else than to run the service registration.
+
+### WebClient
+
+The React front end. Should communicate with the WebService through API
