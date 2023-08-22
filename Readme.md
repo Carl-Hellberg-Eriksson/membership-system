@@ -10,6 +10,22 @@ Prefix all your commits with "#IssueId - "
 
 Don't know ¯\_(ツ)_/¯ glhf
 
+### Database
+
+If you don't have one already, create a local server and replace the default connectionstring in appsettings.Development.json with one to your own. You will probably need to add TrustServerCertificate=True to not get SSL error.
+Initiate the Database by using the Dotnet CLI and running
+
+´´´
+dotnet ef database update --project MembershipSystem.Infrastructure --startup-project MembershipSystem.WebService
+´´´
+
+If you are making changes that requires database updates run:
+´´´
+dotnet ef migrations add "DescriptiveNameOfChange" --project MembershipSystem.Infrastructure --startup-project MembershipSystem.WebService
+
+dotnet ef database update --project MembershipSystem.Infrastructure --startup-project MembershipSystem.WebService
+´´´
+
 ## Architecture
 
 The backend is written in .Net Core 7(?) in what I think is called onion architecture :).
