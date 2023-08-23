@@ -17,10 +17,14 @@ public static class ServiceRegistration {
     /// </summary>
     public static void AddInfrastructure(this IServiceCollection services, IConfiguration config) {
         services.AddTransient<IExample, Example>();
+        services.AddTransient<IPersonService, PersonService>();
 
         //Database
         services.AddDbContext<DatabaseContext>(options => {
+            var connectionstring = config.GetConnectionString("DefaultConnection");
             options.UseSqlServer(config.GetConnectionString("DefaultConnection"));
         });
+        services.AddTransient<IPersonRepository, PersonRepository>();
+        services.AddTransient<IUnitOfWork, UnitOfWork>();
     }
 }

@@ -1,4 +1,4 @@
-using MembershipSystem.Core.DomainEntities;
+using MembershipSystem.Core.DatabaseEntities;
 using Microsoft.EntityFrameworkCore;
 
 namespace MembershipSystem.Infrastructure.Repository;
