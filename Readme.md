@@ -10,6 +10,25 @@ Prefix all your commits with "#IssueId - "
 
 Don't know ¯\_(ツ)_/¯ glhf
 
+### Database
+
+If you don't have one already, create a local server and replace the default connectionstring in appsettings.Development.json with one to your own. You will 
+probably need to add TrustServerCertificate=True to not get SSL error. (If you are using credentials in the connection string, don't push it to the repo. We 
+will figure out another way to store it.)
+
+Initiate the Database by using the Dotnet CLI and running
+
+´´´
+dotnet ef database update --project MembershipSystem.Infrastructure --startup-project MembershipSystem.WebService
+´´´
+
+If you are making changes that requires database updates run:
+´´´
+dotnet ef migrations add "DescriptiveNameOfChange" --project MembershipSystem.Infrastructure --startup-project MembershipSystem.WebService
+
+dotnet ef database update --project MembershipSystem.Infrastructure --startup-project MembershipSystem.WebService
+´´´
+
 ## Architecture
 
 The backend is written in .Net Core 7(?) in what I think is called onion architecture :).
@@ -22,7 +41,14 @@ Includes all domain entities (basic classes) and interfaces.
 ### MembershipSystem.Infrastructure
 
 Includes implementations of the interfaces defined in MembershipSystem.Core.
-Handles the database integration.
+Handles the database integration. The database is accessed through different "repositories"
+all fetched from the class "UnitOfWork". My best read on the topic is [here](https://codewithmukesh.com/blog/repository-pattern-in-aspnet-core/?utm_content=cmp-true).
+Preferably, controllers don't access the repositories directly but instead communicates with a service.
+In the future, we should probably differentiate between the database entities and what entities the services return.
+
+A Generall call chain would look something like:
+Controller => Service => UnitOfWork/Repository => DbContext (EF class) => Real Database.
+
 
 ### MembershipSystem.WebService
 
