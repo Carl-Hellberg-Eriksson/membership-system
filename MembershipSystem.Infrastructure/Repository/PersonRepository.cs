@@ -6,8 +6,8 @@ namespace MembershipSystem.Infrastructure.Repository;
 public class PersonRepository : GenericRepository<Person, int>, IPersonRepository {
     private readonly DbSet<Person> persons;
 
-    public PersonRepository(DatabaseContext dbContext) : base(dbContext) {
-        persons = dbContext.Persons;
+    public PersonRepository(DbSet<Person> persons) : base(persons) {
+        this.persons = persons;
     }
 
     public Task<List<Person>> GetAsync(string firstName, string lastName) {

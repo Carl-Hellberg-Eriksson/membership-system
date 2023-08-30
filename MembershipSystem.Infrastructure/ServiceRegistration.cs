@@ -16,6 +16,7 @@ public static class ServiceRegistration {
     /// Adds needed infrastructure components.
     /// </summary>
     public static void AddInfrastructure(this IServiceCollection services, IConfiguration config) {
+        //Services
         services.AddTransient<IExample, Example>();
         services.AddTransient<IPersonService, PersonService>();
 
@@ -24,7 +25,6 @@ public static class ServiceRegistration {
             var connectionstring = config.GetConnectionString("DefaultConnection");
             options.UseSqlServer(config.GetConnectionString("DefaultConnection"));
         });
-        services.AddTransient<IPersonRepository, PersonRepository>();
         services.AddTransient<IUnitOfWork, UnitOfWork>();
     }
 }

@@ -2,18 +2,20 @@ using MembershipSystem.Core.Interfaces;
 
 namespace MembershipSystem.Infrastructure.Repository;
 public class UnitOfWork : IUnitOfWork {
-    private readonly DatabaseContext _context;
+    private readonly DatabaseContext context;
+
     public UnitOfWork(DatabaseContext context) {
-        _context = context;
-        Persons = new PersonRepository(_context);
+        this.context = context;
+        Persons = new PersonRepository(this.context.Persons);
     }
+
     public IPersonRepository Persons { get; private set; }
 
     public Task<int> SaveChangesAsync() {
-        return _context.SaveChangesAsync();
+        return context.SaveChangesAsync();
     }
 
     public void Dispose() {
-        _context.Dispose();
+        context.Dispose();
     }
 }

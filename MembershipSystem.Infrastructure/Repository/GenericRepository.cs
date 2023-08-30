@@ -3,10 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MembershipSystem.Infrastructure.Repository;
 public class GenericRepository<TEntity, TKey> : IRepository<TEntity, TKey> where TEntity : class {
+
     private readonly DbSet<TEntity> dbSet;
 
-    public GenericRepository(DatabaseContext dbContext) {
-        this.dbSet = dbContext.Set<TEntity>();
+    public GenericRepository(DbSet<TEntity> dbSet) {
+        this.dbSet = dbSet;
     }
 
     public async Task<IEnumerable<TEntity>> GetAllAsync() {
@@ -33,6 +34,7 @@ public class GenericRepository<TEntity, TKey> : IRepository<TEntity, TKey> where
         }
         dbSet.Remove(entity);
     }
+
     public Task DeleteAsync(TEntity entity) {
         dbSet.Remove(entity);
         return Task.CompletedTask;
