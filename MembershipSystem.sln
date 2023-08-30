@@ -3,16 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MembershipSystem.WebService", "MembershipSystem.WebService\MembershipSystem.WebService.csproj", "{0121D35D-89CA-4858-9A5D-80246B2BE905}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MembershipSystem.WebService", "MembershipSystem.WebService\MembershipSystem.WebService.csproj", "{0121D35D-89CA-4858-9A5D-80246B2BE905}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MembershipSystem.Core", "MembershipSystem.Core\MembershipSystem.Core.csproj", "{E65771C7-EDCD-4823-BB00-3BD34025ED9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MembershipSystem.Core", "MembershipSystem.Core\MembershipSystem.Core.csproj", "{E65771C7-EDCD-4823-BB00-3BD34025ED9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MembershipSystem.Infrastructure", "MembershipSystem.Infrastructure\MembershipSystem.Infrastructure.csproj", "{00A427B8-51A6-4EFE-AA37-D80709508081}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MembershipSystem.Infrastructure", "MembershipSystem.Infrastructure\MembershipSystem.Infrastructure.csproj", "{00A427B8-51A6-4EFE-AA37-D80709508081}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9F819F8C-9756-4875-B74C-D90384455043}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2B5BA7A0-640A-4D93-8EB1-DC17407B4339}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MembershipSystem.WebService.Tests", "MembershipSystem.WebService.Tests\MembershipSystem.WebService.Tests.csproj", "{482701EA-5DB4-4293-976A-C3AA41443CED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,9 +36,16 @@ Global
 		{00A427B8-51A6-4EFE-AA37-D80709508081}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00A427B8-51A6-4EFE-AA37-D80709508081}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00A427B8-51A6-4EFE-AA37-D80709508081}.Release|Any CPU.Build.0 = Release|Any CPU
+		{482701EA-5DB4-4293-976A-C3AA41443CED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{482701EA-5DB4-4293-976A-C3AA41443CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{482701EA-5DB4-4293-976A-C3AA41443CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{482701EA-5DB4-4293-976A-C3AA41443CED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{482701EA-5DB4-4293-976A-C3AA41443CED} = {2B5BA7A0-640A-4D93-8EB1-DC17407B4339}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1BBBDC23-7339-463B-A2C5-7D24669E3AB8}
